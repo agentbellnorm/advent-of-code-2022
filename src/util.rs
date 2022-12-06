@@ -1,4 +1,10 @@
 use std::fmt::Debug;
+use std::fs;
+use std::path::Path;
+
+pub fn read_file(path: &str) -> String {
+    fs::read_to_string(Path::new(path)).expect(&format!("could not read file at {:?}", path))
+}
 
 pub fn split_lines(s: &str) -> Vec<&str> {
     s.split("\n").collect()
@@ -9,7 +15,7 @@ pub fn char_at(str: &str, i: i32) -> char {
 }
 
 pub fn log_debug(debugable: &impl Debug) {
-    println!(&format!("{:?}", debugable).into());
+    println!("{}", &format!("{:?}", debugable));
 }
 
 pub fn int(string: &str) -> i32 {
@@ -17,6 +23,10 @@ pub fn int(string: &str) -> i32 {
         Ok(number) => number,
         Err(_) => panic!("Could not parse {:?} to i32", string),
     }
+}
+
+pub fn ints(strings: Vec<&str>) -> Vec<i32> {
+    strings.into_iter().map(int).collect()
 }
 
 pub fn int_big(string: &str) -> i64 {

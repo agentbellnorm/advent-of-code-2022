@@ -1,8 +1,11 @@
-mod day_01;
+extern crate core;
+
+mod one;
+mod two;
 mod util;
 
-use day_01::{run};
+use one::get_a;
 
 fn main() {
-    run();
+    get_a();
 }
