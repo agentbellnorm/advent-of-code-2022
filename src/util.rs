@@ -16,6 +16,10 @@ pub fn char_at(str: &str, i: i32) -> char {
     str.chars().nth(i as usize).unwrap()
 }
 
+pub fn char_at_opt(str: &str, i: i32) -> Option<char> {
+    str.chars().nth(i as usize)
+}
+
 pub fn log_debug(debugable: &impl Debug) {
     println!("{}", &format!("{:?}", debugable));
 }
