@@ -2,6 +2,8 @@ use std::fmt::Debug;
 use std::fs;
 use std::path::Path;
 
+#[allow(dead_code)]
+
 pub fn read_file(path: &str) -> String {
     fs::read_to_string(Path::new(path)).expect(&format!("could not read file at {:?}", path))
 }

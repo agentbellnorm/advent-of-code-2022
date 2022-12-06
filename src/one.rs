@@ -1,4 +1,4 @@
-use crate::util::{ints, log_debug, read_file, split_lines};
+use crate::util::{ints, read_file, split_lines};
 
 #[test]
 fn a() {

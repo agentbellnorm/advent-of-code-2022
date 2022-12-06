@@ -16,13 +16,13 @@ fn b() {
 }
 
 pub fn get_b() -> i32 {
-    let mut input = read_file(\"src/input/$DAY\_short.txt\");
+    let mut input = read_file(\"src/input/${DAY}_short.txt\");
 
     1
 }
 
 pub fn get_a() -> i32 {
-    let mut input = read_file(\"src/input/$DAY\_short.txt\");
+    let mut input = read_file(\"src/input/${DAY}_short.txt\");
 
     1
 }

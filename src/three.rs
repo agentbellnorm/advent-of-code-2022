@@ -1,6 +1,5 @@
-use crate::util::{ints, log_debug, read_file, split_lines};
+use crate::util::{read_file, split_lines};
 use std::collections::HashSet;
-use std::io::Read;
 
 #[test]
 fn a() {
