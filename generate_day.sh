@@ -30,6 +30,6 @@ pub fn get_a() -> i32 {
 
 echo "mod $DAY;\n$(cat src/main.rs)" > src/main.rs
 touch src/input/$DAY.txt
-touch src/input/$DAY_short.txt
+touch src/input/$DAY\_short.txt
 
 cargo test
