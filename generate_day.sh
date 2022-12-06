@@ -3,28 +3,26 @@ DAY=$1
 echo "generating day $DAY skeleton"
 
 echo "
-use crate::util::{ints, log_debug, read_file, split_lines};
+use crate::util::{read_file, split_lines};
 
 #[test]
 fn a() {
-    assert_eq!(get_a(), 0)
+    assert_eq!(get_a(\"src/input/${DAY}_short.txt\"), 0);
+    assert_eq!(get_a(\"src/input/${DAY}.txt\"), 0)
 }
 
 #[test]
 fn b() {
-    assert_eq!(get_b(), 0)
+    assert_eq!(get_b(\"src/input/${DAY}_short.txt\"), 0);
+    assert_eq!(get_b(\"src/input/${DAY}.txt\"), 0)
 }
 
-pub fn get_b() -> i32 {
-    let mut input = read_file(\"src/input/${DAY}_short.txt\");
-
-    1
+pub fn get_b(file: &str) -> i32 {
+    split_lines(read_file(file).as_str()).into_iter().len() as i32
 }
 
-pub fn get_a() -> i32 {
-    let mut input = read_file(\"src/input/${DAY}_short.txt\");
-
-    1
+pub fn get_a(file: &str) -> i32 {
+    split_lines(read_file(file).as_str()).into_iter().len() as i32
 }
 " > src/$DAY.rs
 
