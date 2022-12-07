@@ -1,3 +1,4 @@
+mod seven;
 mod six;
 mod five;
 mod four;
