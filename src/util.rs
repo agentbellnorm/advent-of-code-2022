@@ -1,6 +1,7 @@
 use std::fmt::Debug;
 use std::fs;
 use std::path::Path;
+use std::str::Chars;
 
 #[allow(dead_code)]
 
@@ -25,14 +26,21 @@ pub fn log_debug(debugable: &impl Debug) {
 }
 
 pub fn int(string: &str) -> i32 {
-    match string.parse::<i32>() {
-        Ok(number) => number,
-        Err(_) => panic!("Could not parse {:?} to i32", string),
-    }
+    string
+        .parse::<i32>()
+        .expect(format!("Could not parse {:?} to i32", string).as_str())
 }
 
 pub fn ints(strings: Vec<&str>) -> Vec<i32> {
     strings.into_iter().map(int).collect()
+}
+
+pub fn ints_c(chars: Chars) -> Vec<i32> {
+    let radix = 10;
+    chars
+        .into_iter()
+        .map(|c| c.to_digit(radix).expect("could not convert char to i32") as i32)
+        .collect()
 }
 
 pub fn int_big(string: &str) -> i64 {
