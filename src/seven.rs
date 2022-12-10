@@ -1,4 +1,4 @@
-use crate::util::{char_at, int, read_file, split_lines};
+use crate::util::{int, read_file, split_lines};
 use regex::Regex;
 use std::collections::HashMap;
 

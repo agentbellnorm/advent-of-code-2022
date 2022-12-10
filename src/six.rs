@@ -1,4 +1,4 @@
-use crate::util::{read_file, split_lines};
+use crate::util::read_file;
 use std::collections::hash_map::RandomState;
 use std::collections::{HashSet, VecDeque};
 

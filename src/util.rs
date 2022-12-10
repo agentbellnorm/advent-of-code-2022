@@ -1,9 +1,8 @@
+#[allow(unused_features)]
 use std::fmt::Debug;
 use std::fs;
 use std::path::Path;
 use std::str::Chars;
-
-#[allow(dead_code)]
 
 pub fn read_file(path: &str) -> String {
     fs::read_to_string(Path::new(path)).expect(&format!("could not read file at {:?}", path))
@@ -67,4 +66,9 @@ pub fn log_all_items<T: Debug>(v: &Vec<T>) {
     for i in 0..v.len() {
         log_debug(&v.get(i).unwrap());
     }
+}
+
+fn get_coords(index: i32, width: i32) -> (i32, i32) {
+    let x = index % width;
+    (x, (index - x) / width)
 }
